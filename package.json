@@ -1,0 +1,32 @@
+{
+  "name": "contact-form-cli",
+  "version": "1.0.0",
+  "description": "CLI tool for adding contact form functionality to Next.js projects",
+  "type": "module",
+  "main": "dist/cli.js",
+  "bin": {
+    "contact-form": "dist/cli.js"
+  },
+  "scripts": {
+    "clean": "rm -rf dist && echo '✨ Cleaned dist directory'",
+    "create-dirs": "mkdir -p dist/templates dist/commands && echo '📁 Created dist directories'",
+    "compile": "tsc -p tsconfig.json && echo '🔨 Compiled TypeScript'",
+    "copy-templates": "echo '📝 Copying templates...' && cp -v src/templates/api.template.ts dist/templates/api.template.ts && cp -v src/templates/form.template.tsx dist/templates/form.template.tsx && echo '✅ Templates copied'",
+    "build": "npm run clean && npm run create-dirs && npm run compile && npm run copy-templates && echo '🎉 Build completed!'"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^11.0.0",
+    "fs-extra": "^11.1.1",
+    "inquirer": "^9.2.10"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^20.5.0",
+    "typescript": "^5.1.6"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
